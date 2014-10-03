@@ -31,11 +31,18 @@ module Surveyor
         self.short_text ||= text
         self.data_export_identifier ||= Surveyor::Common.normalize(text)
         self.api_id ||= Surveyor::Common.generate_api_id
+        self.is_printable ||= false
+        #self.caregiver_trait ||= ""
       end
       def display_type=(val)
         write_attribute(:display_type, val.nil? ? nil : val.to_s)
       end
-
+      def is_printable=(val)
+        write_attribute(:is_printable, val.nil? ? false : val)
+      end
+      def caregiver_trait=(val)
+        write_attribute(:caregiver_trait, val.nil? ? nil : val.to_s)
+      end
       def css_class
         [(is_exclusive ? "exclusive" : nil), custom_class].compact.join(" ")
       end
