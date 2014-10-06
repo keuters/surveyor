@@ -32,7 +32,6 @@ module Surveyor
         self.data_export_identifier ||= Surveyor::Common.normalize(text)
         self.api_id ||= Surveyor::Common.generate_api_id
         self.is_printable ||= false
-        #self.caregiver_trait ||= ""
       end
       def display_type=(val)
         write_attribute(:display_type, val.nil? ? nil : val.to_s)
