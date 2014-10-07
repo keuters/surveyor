@@ -110,7 +110,7 @@ module Surveyor
       when /^translations$/; "survey_translation"
       when /^section$/; "survey_section"
       when /^g$|^grid$|^group$|^repeater$/; "question_group"
-      when /^q$|^label$|^image$/; "question"
+      when /^q$|^label$|^image$|^header$|^preamble$/; "question"
       when /^a$/; "answer"
       when /^d$/; "dependency"
       when /^c(ondition)?$/; context[:validation] ? "validation_condition" : "dependency_condition"
@@ -277,7 +277,7 @@ module SurveyorParserQuestionMethods
       :reference_identifier => reference_identifier,
       :is_mandatory => context[:default_mandatory],
       :text => text,
-      :display_type => (original_method =~ /label|image/ ? original_method : "default"),
+      :display_type => (original_method =~ /label|image|header|preamble/ ? original_method : "default"),
       :display_order => context[:survey_section].questions.size }.merge(hash_args)).question
     self.question_group = context[:question_group]
     context[:survey_section].questions << context[:question] = self
