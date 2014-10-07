@@ -32,12 +32,16 @@ module Surveyor
         self.data_export_identifier ||= Surveyor::Common.normalize(text)
         self.api_id ||= Surveyor::Common.generate_api_id
         self.is_printable ||= false
+        self.hard_stop ||= false
       end
       def display_type=(val)
         write_attribute(:display_type, val.nil? ? nil : val.to_s)
       end
       def is_printable=(val)
         write_attribute(:is_printable, val.nil? ? false : val)
+      end
+      def hard_stop=(val)
+        write_attribute(:hard_stop, val.nil? ? false : val)
       end
       def caregiver_trait=(val)
         write_attribute(:caregiver_trait, val.nil? ? nil : val.to_s)
