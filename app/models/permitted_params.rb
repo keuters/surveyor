@@ -32,7 +32,7 @@ class PermittedParams < Struct.new(:params)
     strong_parameters.permit(*question_attributes)
   end
   def question_attributes
-    [:survey_section, :question_group, :survey_section_id, :question_group_id, :text, :short_text, :help_text, :pick, :reference_identifier, :data_export_identifier, :common_namespace, :common_identifier, :display_order, :display_type, :is_mandatory, :display_width, :custom_class, :custom_renderer, :correct_answer_id]
+    [:survey_section, :question_group, :survey_section_id, :question_group_id, :text, :short_text, :help_text, :pick, :reference_identifier, :data_export_identifier, :common_namespace, :common_identifier, :display_order, :display_type, :is_mandatory, :display_width, :custom_class, :custom_renderer, :correct_answer_id, :image_slug]
   end
 
   # question_group
@@ -48,7 +48,7 @@ class PermittedParams < Struct.new(:params)
     strong_parameters.permit(*answer_attributes)
   end
   def answer_attributes
-    [:question, :question_id, :text, :short_text, :help_text, :weight, :response_class, :reference_identifier, :data_export_identifier, :common_namespace, :common_identifier, :display_order, :is_exclusive, :display_length, :custom_class, :custom_renderer, :default_value, :display_type, :input_mask, :input_mask_placeholder, :is_printable, :caregiver_trait, :hard_stop]
+    [:question, :question_id, :text, :short_text, :help_text, :weight, :response_class, :reference_identifier, :data_export_identifier, :common_namespace, :common_identifier, :display_order, :is_exclusive, :display_length, :custom_class, :custom_renderer, :default_value, :display_type, :input_mask, :input_mask_placeholder, :is_printable, :caregiver_trait, :hard_stop, :document_slug]
   end
 
   # dependency

@@ -37,6 +37,10 @@ module Surveyor
         self.api_id ||= Surveyor::Common.generate_api_id
       end
 
+      def image_slug=(val)
+        write_attributes(:image_slug, val.nil? ? nil : val.to_s)
+      end
+
       def pick=(val)
         write_attribute(:pick, val.nil? ? nil : val.to_s)
       end

@@ -34,6 +34,9 @@ module Surveyor
         self.is_printable ||= false
         self.hard_stop ||= false
       end
+      def document_slug=(val)
+        write_attribute(:document_slug, val.nil? ? nil : val.to_s)
+      end
       def display_type=(val)
         write_attribute(:display_type, val.nil? ? nil : val.to_s)
       end
