@@ -38,7 +38,7 @@ module Surveyor
       end
 
       def image_slug=(val)
-        write_attributes(:image_slug, val.nil? ? nil : val.to_s)
+        write_attribute(:image_slug, val.nil? ? nil : val.to_s)
       end
 
       def pick=(val)
