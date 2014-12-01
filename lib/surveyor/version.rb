@@ -1,3 +1,3 @@
 module Surveyor
-  VERSION = '1.4.1.sutterhealth'
+  VERSION = '1.4.2.sutterhealth'
 end
